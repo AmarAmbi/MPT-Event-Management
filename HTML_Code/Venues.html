@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MPT Events - Venues</title>
+  <link rel="icon" href="../Images/Logo.png"/>
+  <link rel="stylesheet" href="../CSS_Code/Venues.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+  <header class="main-header1">
+        <div class="container1">
+            <div class="logo">
+                    <img src="../Images/Logo.png" alt="MPT Events Logo">
+                    <h1>MPT Events</h1>
+            </div>
+            <nav class="main-nav1">
+                <ul>
+                   <li><a href="Home.html" class="active">Home</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="Services.html">Services <i class="fas fa-chevron-down1"></i></a>
+                        <div class="dropdown-content">
+                            <a href="Catering_Services.html">Catering_Services</a>
+                            <a href="Corporate_Events.html">Corporate Events</a>
+                            <a href="Destination_Events.html">Destination Events</a>
+                            <a href="Music_&_Entertainment.html">Music & Entertainment</a>
+                            <a href="Private_Parties.html">Private Parties</a>
+                            <a href="Weddings.html">Wedding Events</a>
+                        </div>
+                    </li>
+                    <li><a href="Venues.html">Venues</a></li>
+                    <li><a href="Booking.html">Gallery & Booking</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="Login.html" id="logoutBtn">Logout</a></li>
+                </ul><br>
+            </nav>
+        </div>
+    </header>
+
+  <div id="popup" class="popup-messag"></div>
+
+
+<!-- why section -->
+    <section class="main-section2">
+    <div class="text-container2">
+      <h1></h1>
+      <h1 class="title">Venues in <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Karnataka:</span> A Fairytale Setting for <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Events</span> .</h1>
+      <p><strong style="color: #6A1B9A;">MPT Event Management</strong> introduces Karnataka's venues, offering lush greenery, breathtaking beauty, and world-class amenities. These venues provide modern facilities and luxurious settings, making Karnataka the perfect location for events.</p>
+    </div>
+    <div class="image-container2">
+      <img src="../Images/VenueWeddings.png" alt="Wedding Couple Cutting Cake">
+    </div>
+    <p>Find the best event and wedding venues in Karnataka with MPT Event Management. We offer expert event management services for luxurious, traditional, and modern weddings, as well as corporate and private parties. Discover 300+ event venues with stunning locations. Use the smart filters below to explore and book your dream event and wedding venues in Karnataka by location and venue type now!</p>
+  </section>
+
+
+<section class="filter-section">
+  <div class="filter-controls">
+    <select id="locationFilter">
+      <option>Select Venue Location</option>
+      <option>Bangalore</option>
+      <option>Mysore</option>
+      <option>Hampi</option>
+      <option>Mangalore</option>
+      <option>Coorg</option>
+      <option>Tumakuru</option>
+    </select>
+
+    <select id="typeFilter">
+      <option>Select Venue Type</option>
+      <option>Marriage Garden / Lawns</option>
+      <option>Villa</option>
+      <option>Banquet Halls</option>
+      <option>Private Halls</option>
+      <option>Wedding Resorts</option>
+      <option>Outdoor wedding</option>
+    </select>
+
+    <input type="text" id="searchInput" placeholder="Search Venue/Location..." />
+  </div>
+
+  <div id="venueList" class="venue-grid">
+
+    <!-- Venue Cards -->
+    
+    <div class="venue-card" data-location="Bangalore" data-type="Banquet Halls">
+      <img src="../Images/HyattCentric.png" alt="Venue Image">
+      <div class="rating">★★★★★</div>
+      <h3>Hyatt Centric Hotel</h3>
+      <p><span class="location-icon">📍</span> MG Road, Bangalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mysore" data-type="Private Halls">
+      <img src="../Images/RadissonBluPlaza.png" alt="Venue Image">
+      <div class="rating">★★★★★</div>
+      <h3>Radisson Blu Plaza</h3>
+      <p><span class="location-icon">📍</span> MG Road, Mysore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mangalore" data-type="Villa">
+      <img src="../Images/kewatBeach.png" alt="Venue Image">
+      <div class="rating">★★★★★</div>
+      <h3>kewat Beach Villa</h3>
+      <p><span class="location-icon">📍</span>Balmatta , Mangalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mangalore" data-type="Outdoor wedding">
+      <img src="../Images/IslandDreams.png" alt="Venue Image">
+      <div class="rating">★★★★★</div>
+      <h3>Island Dreams Resort</h3>
+      <p><span class="location-icon">📍</span> Kulur, Mangalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Bangalore" data-type="Private Halls">
+      <img src="../Images/beverage.jpg" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>Halcyon Residences</h3>
+      <p><span class="location-icon">📍</span>Koramangala, Bangalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Coorg" data-type="Banquet Halls">
+      <img src="../Images/TheHosteller.png" alt="Venue Image">
+      <div class="rating">★★★★⯪</div>
+      <h3>The Hosteller</h3>
+      <p><span class="location-icon">📍</span> Coorg, Madikeri</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Hampi" data-type="Wedding Resorts">
+      <img src="../Images/Evolve_Back .png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>Evolve Back Hampi</h3>
+      <p><span class="location-icon">📍</span>Kamlapura , Hampi</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mysore" data-type="Wedding Resorts">
+      <img src="../Images/RoyalOrchidBrindavanGarden.png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>Royal Orchid Brindavan Garden</h3>
+      <p><span class="location-icon">📍</span>Krishna Raja Sagar , Mysore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Bangalore" data-type="Marriage Garden / Lawns">
+      <img src="../Images/LeelaPalace.png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>The Leela Palace</h3>
+      <p><span class="location-icon">📍</span>Old Airport Road, Bangalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Coorg" data-type="Outdoor wedding">
+      <img src="../Images/CloverHolidayVillage.png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>Clover Holiday Village</h3>
+      <p><span class="location-icon">📍</span> Jagenahalli Village, Coorg</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Hampi" data-type="Outdoor wedding">
+      <img src="../Images/HeritageResort.png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>Heritage Resort</h3>
+      <p><span class="location-icon">📍</span>Malpangudi, Hampi</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Bangalore" data-type="Wedding Resorts">
+      <img src="../Images/IconGrand.png" alt="Venue Image">
+      <div class="rating">★★★★⯪</div>
+      <h3>Icon Grand Hotel by Bhagini</h3>
+      <p><span class="location-icon">📍</span> Thubarahalli, Bengaluru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Tumakuru" data-type="Wedding Resorts">
+      <img src="../Images/AsPalace.png" alt="Venue Image">
+      <div class="rating">★★★★⯪</div>
+      <h3>AS Palace</h3>
+      <p><span class="location-icon">📍</span> Bheemasandra, Tumakuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mysore" data-type="Wedding Resorts">
+      <img src="../Images/RoyalPalace.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>Royal Palace Resort</h3>
+      <p><span class="location-icon">📍</span> Chamundi Hills, Mysore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Bangalore" data-type="Outdoor wedding">
+      <img src="../Images/Mandara.png" alt="Venue Image">
+      <div class="rating">★★★★⯪</div>
+      <h3>Mandara</h3>
+      <p><span class="location-icon">📍</span> Badamanavarthekaval, Bengaluru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Tumakuru" data-type="Outdoor wedding">
+      <img src="../Images/GoldenChariot.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>The Golden Chariot</h3>
+      <p><span class="location-icon">📍</span> Manchakalkuppe, Tumakuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mysore" data-type="Banquet Halls">
+      <img src="../Images/DRCfunctionHall.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>DRC Function Hall A/C</h3>
+      <p><span class="location-icon">📍</span> Kalyanagiri, Mysuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Bangalore" data-type="Marriage Garden / Lawns">
+      <img src="../Images/TheBegning.png" alt="Venue Image">
+      <div class="rating">★★★★⯪</div>
+      <h3>The Beginning</h3>
+      <p><span class="location-icon">📍</span> Sarjapur, Bengaluru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mysore" data-type="Villa">
+      <img src="../Images/SouthCote.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>South Cote</h3>
+      <p><span class="location-icon">📍</span> Rajendra Nagar, Mysuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Tumakuru" data-type="Banquet Halls">
+      <img src="../Images/DiamondPalace.png" alt="Venue Image">
+      <div class="rating">★★★★⯪</div>
+      <h3>Diamond Palace</h3>
+      <p><span class="location-icon">📍</span> Manchakalkuppe, Tumakuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mysore" data-type="Marriage Garden / Lawns">
+      <img src="../Images/Volga.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>Volga The Venue</h3>
+      <p><span class="location-icon">📍</span> Ring Road, Mysuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Bangalore" data-type="Wedding Resorts">
+      <img src="../Images/WhiteHouse.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>White House</h3>
+      <p><span class="location-icon">📍</span> HSR Layout, Bengalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Coorg" data-type="Villa">
+      <img src="../Images/RichBerry.png" alt="Venue Image">
+      <div class="rating">★★★★⯪</div>
+      <h3>Rich Berry</h3>
+      <p><span class="location-icon">📍</span> Suntikoppa, Coorg</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mysore" data-type="Outdoor wedding">
+      <img src="../Images/SouthernStar.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>Southern Star</h3>
+      <p><span class="location-icon">📍</span> Vinobha Road, Mysuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Bangalore" data-type="Villa">
+      <img src="../Images/SeasonsSuites.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>Seasons Suites - HBR</h3>
+      <p><span class="location-icon">📍</span> HBR Layout, Bengalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Hampi" data-type="Villa">
+      <img src="../Images/MuraliVillas.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>Murali Villas</h3>
+      <p><span class="location-icon">📍</span> Sanapur, Hampi</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Hampi" data-type="Marriage Garden / Lawns">
+      <img src="../Images/LeoWoods.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>The Leo Woods</h3>
+      <p><span class="location-icon">📍</span> Hosapete, Hampi</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Hampi" data-type="Banquet Halls">
+      <img src="../Images/EvolveBack.png" alt="Venue Image">
+      <div class="rating">★★★★⯪</div>
+      <h3>Evolve Back</h3>
+      <p><span class="location-icon">📍</span>Rampur , Hampi</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+
+    <div class="venue-card" data-location="Hampi" data-type="Private Halls">
+      <img src="../Images/RockRegency.png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>Rock Regency</h3>
+      <p><span class="location-icon">📍</span> Toranagallu, Hampi</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mangalore" data-type="Private Halls">
+      <img src="../Images/OscarClub.png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>Oscar Club and Resorts</h3>
+      <p><span class="location-icon">📍</span> Ulaibettu, Mangalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mangalore" data-type="Marriage Garden / Lawns">
+      <img src="../Images/AdyarGarden.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>Adyar Garden</h3>
+      <p><span class="location-icon">📍</span> Virendra Nagar, Mangalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+     <div class="venue-card" data-location="Mangalore" data-type="Banquet Halls">
+      <img src="../Images/SilverBell.png" alt="Venue Image">
+      <div class="rating">★★★★⯪</div>
+      <h3>Silver Bell</h3>
+      <p><span class="location-icon">📍</span> Jyothi Circle , Mangalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Mangalore" data-type="Wedding Resorts">
+      <img src="../Images/ManasaResort.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>Manasa Resort</h3>
+      <p><span class="location-icon">📍</span> Vamanjur, Mangalore</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Tumakuru" data-type="Marriage Garden / Lawns">
+      <img src="../Images/ARGarden.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>AR Garden</h3>
+      <p><span class="location-icon">📍</span> Mayasandra, Tumakuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+
+    <div class="venue-card" data-location="Tumakuru" data-type="Villa">
+      <img src="../Images/JenugunduJungleTrail.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>Jenugundu Jungle Trail</h3>
+      <p><span class="location-icon">📍</span> Hanumanthpura, Tumakuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+
+    <div class="venue-card" data-location="Tumakuru" data-type="Private Halls">
+      <img src="../Images/Grand7.png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>Grand 7 Party Hall</h3>
+      <p><span class="location-icon">📍</span> SIT Main Road, Tumakuru</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Coorg" data-type="Marriage Garden / Lawns">
+      <img src="../Images/AnvayaTheMarquee.png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>Anvaya The Marquee</h3>
+      <p><span class="location-icon">📍</span> Mahadevpet, Coorg</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Coorg" data-type="Private Halls">
+      <img src="../Images/TheCocoon.png" alt="Venue Image">
+      <div class="rating">★★★⯪☆</div>
+      <h3>The Cocoon</h3>
+      <p><span class="location-icon">📍</span> Gonikoppal, Coorg</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+
+    <div class="venue-card" data-location="Coorg" data-type="Wedding Resorts">
+      <img src="../Images/PlumeriaResorts.png" alt="Venue Image">
+      <div class="rating">★★★★☆</div>
+      <h3>Plumeria Resort</h3>
+      <p><span class="location-icon">📍</span> Kushalnagar, Coorg</p>
+      <div class="card-buttons">
+        <button class="pricing-btn">Request Pricing</button>
+        <button class="whatsapp-btn"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">WhatsApp</a></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="pricingModal" class="modal-overlay">
+  <div class="modal-box">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <h2>Request Pricing</h2>
+    <p>Fill this form and we will contact you shortly. All the information provided will be treated confidentially.</p>
+
+    <form id="availability-form">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" required>
+      </div>
+      <div class="form-group">
+        <label>Phone number *</label>
+        <input type="tel" required>
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email">
+      </div>
+      <div class="form-group">
+        <label>Function date *</label>
+        <input type="date" required>
+      </div>
+      <div class="form-group">
+        <label>Number of guests</label>
+        <input type="number" min="1">
+      </div>
+      <div class="form-group">
+        <label>Number of rooms</label>
+        <input type="number" min="1">
+      </div>
+      <div class="form-group">
+        <label>Function Type *</label>
+        <div class="radio-group">
+          <label><input type="radio" name="functionType" required> Wedding</label>
+          <label><input type="radio" name="functionType"> Other events</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Function Time *</label>
+        <div class="radio-group">
+          <label><input type="radio" name="functionTime" required> Day</label>
+          <label><input type="radio" name="functionTime"> Evening</label>
+        </div>
+      </div>
+      <div class="full-width">
+        <button type="submit" class="submit-btn">Check Availability</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Success Popup -->
+  <div id="successPopup" class="popup-messagee">
+    ✅ Pricing request sent successfully!, Our team will get back to you soon!
+  </div>
+
+<section class="container1">
+    <div class="card1">
+      <div class="image-box1">
+        <img src="../Images/beach-wedding.jpg" alt="Wedding Setup">
+      </div>
+      <div class="content-box1">
+        <h1 class="title1">WHY IS KARNATAKA THE BEST DESTINATION FOR YOUR WEDDING?</h1>
+        <p class="description1">
+          Karnataka, is a southern state of India and one of the most beautiful places to get married. With its beaches, backwaters, luxury resorts, hill stations, traditional culture, heritage palaces, and houses, Karnataka offers stunning wedding locations. Nowadays, it is a top choice for a destination wedding in Karnataka.
+        </p>
+        <div class="button-group1">
+          <button class="btnn purple1"><a href="Contact.html">📞 Talk to Expert</a></button>
+          <button class="btnn green1"><a href="https://wa.me/918310884090" class="cta-btn whatsapp" target="_blank">💬 Whatsapp us</a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+    <h1 class="h1">Reasons to Plan a Dream Events in Karnataka's Venues</h1>
+    
+  <p class="p">
+    Karnataka is a very popular state in India and is also known for its world-class hospitality, with experienced 
+    <a class="a1" href="#">Karnataka wedding planners</a> and premium 
+    <a class="a1" href="#">event management services</a> ensuring a seamless celebration. Additionally, the state has excellent connectivity 
+    with direct flights from airports and a well-developed infrastructure, making travel easy for guests. This Indian 
+    state remains an affordable yet luxurious event location and wedding venue across Karnataka. If you are dreaming of a small 
+    or grand event that combines natural greenery and beauty, rich traditions, and modern elegance, booking event venues in 
+    Karnataka is the perfect choice for your big day.
+  </p>
+
+  <div class="highlight-box3">
+    <div class="images-grid3">
+      <img src="../Images/destination-banner.jpg" alt="venue1">
+      <img src="../Images/destination-event.jpg" alt="venue2">
+      <img src="../Images/venue1.jpg" alt="venue3">
+      <img src="../Images/AnvayaTheMarquee.png" alt="venue4">
+    </div>
+
+    <div class="highlight-text3">
+      <h2>Looking for your dream destination wedding venue in Karnataka at your preferred location?</h2>
+      <p>MPT offers stunning backwater resorts, beach venues, and hill stations—perfect for your dream events in Karnataka!</p>
+      <a href="Destination_Events.html" class="a"><button>View Karnataka Destination Venues</button></a>
+    </div>
+  </div><br>
+
+  <!-- why section -->
+    <section class="main-section2">
+    <div class="text-container2">
+      <h1>Why Choose MPT Events for Booking Your Event Venue in Karnataka?</h1>
+      <p>Choosing the perfect event and wedding venue is important for a memorable celebration. MPT Event Management professionals simplify the process with expert venue booking services in Karnataka, offering exclusive access to Karnataka's top event venues, from luxurious event venues to normal or budget-friendly venues in Karnataka.</p>
+    </div>
+    <div class="image-container2">
+      <img src="../Images/WhyMPT.png" alt="whyMPT">
+    </div>
+  </section><br>
+
+
+
+<!--  FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="title2" data-animate>FAQ</h2>
+      <details data-animate><summary>What are Popular event venue Types in Karnataka?</summary><p>Karnataka offers a variety of venues, including beaches, backwaters resorts, luxury hotels, palaces, heritage buildings, traditional wedding halls, convention centers, auditoriums, Kalyana mandapams, banquet halls, and even plantations and farmhouses.</p></details>
+      <details data-animate><summary>What is the Best Time for a events in karnataka?</summary><p>The ideal time is generally considered to be between November and February up to March when the weather is pleasant and dry.</p></details>
+      <details data-animate><summary>Do you handle venue booking and technical setups?</summary><p>Absolutely. We take care of venue sourcing, sound systems, projectors, LED screens, stage setups, and live streaming.</p></details>
+      <details data-animate><summary>How Much Do Event Venues Cost in karnataka?</summary><p>Costs vary depending on the event venue type, location, size. Average prices range for venues from 30,000 to 100,000 lakh for local or regional traditional Karnataka events, depending on the amenities, number of guests accommodated, location, etc.</p></details>
+      <details class="reveal"><summary>Do you offer on-site event management support?</summary><p>Our team is present throughout the event to manage flow, troubleshoot issues, and ensure smooth execution.</p></details>
+    </div>
+  </section>
+
+
+
+<!-- Scroll-to-top button -->
+  <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">↑</button>
+
+
+
+<!-- FOOTER -->
+  <footer class="main-footer1">
+        <div class="container1">
+            <div class="footer-grid1">
+                <div class="footer-about1">
+                    <h3>MPT Events</h3>
+                    <p>Your trusted partner for creating memorable events across Bengaluru and beyond.</p>
+                    <div class="social-links1">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links1">
+                    <h3>Quick Links</h3>
+                     <ul>
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="About_Us.html">About</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Venues.html">Venues</a></li>
+                        <li><a href="Booking.html">Gallery & Booking</a></li>
+                        <li><a href="Event_cancelletion.html">Event Cancellation</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact1">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 48, SKS Compound, Hosur Rd, Bengaluru, Karnataka, India</p>
+                    <p><i class="fas fa-phone"></i> +91-8310884090 </p>
+                    <p><i class="fas fa-envelope"></i> info@mpteventmanagement.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom1">
+                <span id="year"></span> MPT Event Management. All rights reserved.</p>
+                <a class="a" href="#">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Terms of Service</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Legal</a>
+            </div>
+        </div>
+    </footer>
+
+
+<script src="../JavaScript_Code/Logout.js"></script>
+<script src="../JavaScript_Code/Venues.js"></script>
+
+</body>
+</html>

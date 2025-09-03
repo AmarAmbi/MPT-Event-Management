@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MPT Events — Login </title>
+<link rel="icon" href="../Images/Logo.png"/>
+<link rel="stylesheet" href="../CSS_Code/Login.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header1">
+        <div class="container1">
+            <div class="logo">
+                    <img src="../Images/Logo.png" alt="MPT Events Logo">
+                    <h1>MPT Events</h1>
+            </div>
+            <nav class="main-nav1">
+                <ul>
+                   <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Venues</a></li>
+                    <li><a href="#">Gallery & Booking</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  
+
+  <div class="wrap">
+    <div class="card">
+      <div class="header">
+        <div class="tabs">
+          <button class="tab active" data-target="loginView">Login</button>
+          <button class="tab" data-target="registerView">Register</button>
+        </div>
+      </div>
+
+      <div class="body">
+        <!-- Left: Forms -->
+        <div class="panel">
+          <!-- LOGIN -->
+          <section id="loginView" class="view active">
+            <h2>Welcome back</h2>
+            <p class="muted">Sign in with your email and password, or explore without signing in.</p>
+            <div class="grid">
+              <div>
+                <label>Email</label>
+                <input id="loginEmail" class="input" type="email" placeholder="you@example.com" autocomplete="email">
+              </div>
+              <div>
+                <label>Password</label>
+                <input id="loginPassword" class="input" type="password" placeholder="••••••••" autocomplete="current-password">
+              </div>
+              <div class="row">
+                <button id="loginBtn" class="btn">Login</button>
+                <button class="tab" data-target="otpView">Login with code</button>
+                <a href="Home.html"><button id="exploreBtn" class="btn ghost">Explore without login</button></a>
+              </div>
+              <div class="row">
+                <span class="muted">Forgot your password?
+                  <a class="link" data-goto="forgotView">Reset here</a>
+                </span>
+              </div>
+            </div>
+          </section>
+
+          <!-- REGISTER -->
+          <section id="registerView" class="view">
+            <h2>Create account</h2>
+            <p class="muted">Your email and phone must be unique. Password must contain
+              <strong>1 uppercase</strong>, <strong>1 number</strong>, and <strong>1 special character</strong>.</p>
+            <div class="grid two">
+              <div>
+                <label>Full Name</label>
+                <input id="regName" class="input" type="text" placeholder="Ananya Sharma">
+              </div>
+              <div>
+                <label>Phone</label>
+                <input id="regPhone" class="input" type="tel" placeholder="9876543210">
+              </div>
+              <div>
+                <label>Email</label>
+                <input id="regEmail" class="input" type="email" placeholder="you@example.com">
+              </div>
+              <div>
+                <label>Password</label>
+                <input id="regPassword" class="input" type="password" placeholder="Strong#1">
+              </div>
+              <div class="row">
+                <button id="registerBtn" class="btn secondary">Register</button>
+                <span class="muted">Already have an account? <a class="link" data-goto="loginView">Login</a></span>
+              </div>
+            </div>
+          </section>
+
+          <!-- OTP LOGIN -->
+          <section id="otpView" class="view">
+            <h2>Login with OTP</h2>
+            <p class="muted">Enter your registered email. We’ll generate a one-time passcode (shown in a popup for demo).</p>
+            <div class="grid">
+              <div>
+                <label>Email</label>
+                <input id="otpEmail" class="input" type="email" placeholder="you@example.com">
+              </div>
+              <div class="row">
+                <button id="sendOtpBtn" class="btn info">Send Code</button>
+              </div>
+              <div>
+                <label>Enter OTP</label>
+                <input id="otpCode" class="input" type="text" placeholder="6-digit code">
+              </div>
+              <div class="row">
+                <button id="verifyOtpBtn" class="btn">Verify & Login</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- FORGOT -->
+          <section id="forgotView" class="view">
+            <h2>Forgot password</h2>
+            <p class="muted">Enter your registered email. We’ll show a reset link (simulated).</p>
+            <div class="grid">
+              <div>
+                <label>Email</label>
+                <input id="fpEmail" class="input" type="email" placeholder="you@example.com">
+              </div>
+              <div class="row">
+                <button id="sendResetBtn" class="btn info">Send reset link</button>
+                <span class="muted">Remembered? <a class="link" data-goto="loginView">Back to Login</a></span>
+              </div>
+            </div>
+          </section>
+
+          <!-- RESET PASSWORD -->
+          <section id="resetView" class="view">
+            <h2>Reset your password</h2>
+            <p class="muted">Enter and confirm a new password.</p>
+            <div class="grid two">
+              <div>
+                <label>New Password</label>
+                <input id="newPass" class="input" type="password" placeholder="NewStrong#1">
+              </div>
+              <div>
+                <label>Confirm Password</label>
+                <input id="confirmPass" class="input" type="password" placeholder="NewStrong#1">
+              </div>
+              <div class="row">
+                <button id="applyResetBtn" class="btn secondary">Update Password</button>
+                <a class="btn ghost" data-goto="loginView">Back to Login</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- DASHBOARD (after login / explore) -->
+          <section id="dashboard" class="dash">
+            <div class="row" style="justify-content:space-between; align-items:center; margin-bottom:14px">
+              <div class="pill"><span></span><strong id="welcomeName"></strong></div>
+              <div class="row">
+                <button id="logoutBtn" class="btn ghost">Logout</button>
+              </div>
+            </div>
+            <div class="grid two">
+              <div class="cardlet">
+                <h3 style="margin:0 0 6px">You’re in!</h3>
+                <p class="muted">This is a demo “protected” area shown after Login / OTP / Explore.</p>
+              </div>
+              <div class="cardlet">
+                <h3 style="margin:0 0 6px">LocalStorage Backend</h3>
+                <p class="muted">User data, OTPs, and reset tokens are stored in your browser only.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right: Hero / tips -->
+        <div class="image-containerr">
+          <img src="../Images/Verify.png" width="500px" height="100%">
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div class="toasts" id="toasts"></div>
+
+   <!-- FOOTER -->
+  <footer class="main-footer1">
+        <div class="container1">
+            <div class="footer-grid1">
+                <div class="footer-about1">
+                    <h3>MPT Events</h3>
+                    <p>Your trusted partner for creating memorable events across Bengaluru and beyond.</p>
+                    <div class="social-links1">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links1">
+                    <h3>Quick Links</h3>
+                     <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Venues</a></li>
+                        <li><a href="#">Gallery & Booking</a></li>
+                        <li><a href="#">Event Cancellation</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact1">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 48, SKS Compound, Hosur Rd, Bengaluru, Karnataka, India</p>
+                    <p><i class="fas fa-phone"></i> +91-8310884090 </p>
+                    <p><i class="fas fa-envelope"></i> info@mpteventmanagement.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom1">
+                <span id="year"></span> MPT Event Management. All rights reserved.</p>
+                <a class="a" href="#">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Terms of Service</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Legal</a>
+            </div>
+        </div>
+    </footer>
+
+<script src="../JavaScript_Code/Login.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MPT Events — Cancellation</title>
+  <link rel="icon" href="../Images/Logo.png"/>
+  <link rel="stylesheet" href="../CSS_Code/Event_cancellation.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+    <!-- Header -->
+  <header class="main-header1">
+        <div class="container1">
+            <div class="logo">
+                    <img src="../Images/Logo.png" alt="MPT Events Logo">
+                    <h1>MPT Events</h1>
+            </div>
+            <nav class="main-nav1">
+                <ul>
+                   <li><a href="Home.html" class="active">Home</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="Services.html">Services <i class="fas fa-chevron-down1"></i></a>
+                        <div class="dropdown-content">
+                            <a href="Catering_Services.html">Catering_Services</a>
+                            <a href="Corporate_Events.html">Corporate Events</a>
+                            <a href="Destination_Events.html">Destination Events</a>
+                            <a href="Music_&_Entertainment.html">Music & Entertainment</a>
+                            <a href="Private_Parties.html">Private Parties</a>
+                            <a href="Weddings.html">Wedding Events</a>
+                        </div>
+                    </li>
+                    <li><a href="Venues.html">Venues</a></li>
+                    <li><a href="Booking.html">Gallery & Booking</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="Login.html" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="title3d">
+        <div class="title-card tilt" id="tiltCard" tabindex="0" aria-label="Event cancellation portal card with 3D tilt">
+          <div class="tilt-child">
+            <p class="badge">Fast & Transparent</p>
+            <h2>Cancel Your Booking</h2>
+            <p>"Plans may change, but your dreams remain. Every cancellation today is just a postponed celebration waiting to shine brighter tomorrow."</p>
+            <div class="title-badges" style="margin-top:12px">
+              <span class="badge">Date Preview</span>
+              <span class="badge">Secure Form</span>
+              <span class="badge">Policy Aware</span>
+            </div>
+            <div class="steps">
+              <span class="chip">Step 1: Enter details</span>
+              <span class="chip">Step 2: Reason</span>
+              <span class="chip">Step 3: Submit</span>
+              <span class="chip">Step 4: Bill Clearing process</span>
+              <span class="chip">Step 5: Proceed Refund</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-card">
+          <div class="media">
+            <!-- 3D rotating cube with animated photos -->
+            <div class="cube" aria-hidden="true">
+              <div class="face f-front"><img src="../Images/EventCancellation1.png" alt="EventCancellation img" loading="lazy"></div>
+              <div class="face f-back"><img src="../Images/EventCancellation2.png" alt="EventCancellation img" loading="lazy"></div>
+              <div class="face f-right"><img src="../Images/EventCancellation3.png" alt="EventCancellation img" loading="lazy"></div>
+              <div class="face f-left"><img src="../Images/EventCancellation4.png" alt="EventCancellation img" loading="lazy"></div>
+              <div class="face f-top"><img src="../Images/EventCancellation5.png" alt="EventCancellation img" loading="lazy"></div>
+              <div class="face f-bottom"><img src="../Images/EventCancellation6.png" alt="EventCancellation img" loading="lazy"></div>
+            </div>
+          </div>
+          <div class="copy">
+            <h3>Live Preview</h3>
+            <p>"Hover over the cube to pause. This page offers real-time visualization of a cancellation, effectively reducing the time it takes to see what changes will apply."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Photo strip -->
+  <section class="strip" aria-label="Animated event photos strip">
+    <div class="scrollbar">
+      <div class="slides" role="list">
+        <!-- Repeat block twice for infinite loop illusion -->
+        <div class="row" style="display:flex">
+          <img src="../Images/Private15.png" alt="Stage lighting">
+          <img src="../Images/Wedding12.png" alt="Stage lighting duplicate" aria-hidden="true">
+          <img src="../Images/Others20.png" alt="Dance floor">
+          <img src="../Images/Tech_Talk.png" alt="Corporate gala">
+          <img src="../Images/Wedding5.png" alt="Wedding table">
+          <img src="../Images/Corp4.png" alt="Outdoor lights">
+          <img src="../Images/Others1.png" alt="Conference">
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Cancellation Section -->
+  <main id="cancel" class="section">
+    <div class="grid">
+      <!-- Form card with tilt -->
+      <form class="card form tilt" id="cancelForm" autocomplete="on" novalidate>
+        <div class="tilt-child">
+          <h3>Request Cancellation</h3>
+          <div class="row">
+            <div>
+              <label for="bookingId">Booking ID</label>
+              <input id="bookingId" name="bookingId" placeholder="MPT-2025-XXXX" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="eventDate">Event Date</label>
+              <input id="eventDate" type="date" name="eventDate" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" name="phone" placeholder="+91-XXXXXXXXXX" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="reason">Reason</label>
+              <select id="reason" name="reason" required>
+                <option value="">Select reason</option>
+                <option>Change of plans</option>
+                <option>Budget constraints</option>
+                <option>Venue/date conflict</option>
+                <option>Health related</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="refund">Refund Preference</label>
+              <select id="refund" name="refund">
+                <option value="">Select type</option>
+                <option>Original payment method</option>
+                <option>Wallet refund</option>
+                <option>Bank Transfer</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="details">Additional Details</label>
+            <textarea id="details" name="details" placeholder="Share context to help our team process faster..."></textarea>
+          </div>
+
+          <div class="actions" style="margin-top:14px">
+            <button type="submit" class="btn">Submit</button>
+            <button type="reset" class="btn secondary">Reset</button>
+            <span class="status"><span class="dot" id="liveDot"></span> <span id="formHint">Awaiting input…</span></span>
+          </div>
+        </div>
+      </form>
+
+      <!-- Policy / Info card -->
+      <aside class="card policy">
+        <h4>Cancellation Policy</h4>
+        <ul>
+          <li><strong>30+ days before event:</strong> 90% refund of advance.</li>
+          <li><strong>15–20 days before event:</strong> 50% refund of advance.</li>
+          <li><strong>Within 72 hours:</strong> Refund not guaranteed (case-by-case).</li>
+          <li><strong>It takes 5-7 Days:</strong> for the refund to be credited to the account</li>
+        </ul>
+        <h4>Tips</h4>
+        <ul>
+          <li>Include as much detail as possible for faster processing.</li>
+          <li>Use the same email used during booking to auto-verify.</li>
+          <li>We reply within <em>24 business hours</em>.</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+   <footer class="main-footer1">
+        <div class="container1">
+            <div class="footer-grid1">
+                <div class="footer-about1">
+                    <h3>MPT Events</h3>
+                    <p>Your trusted partner for creating memorable events across Bengaluru and beyond.</p>
+                    <div class="social-links1">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links1">
+                    <h3>Quick Links</h3>
+                     <ul>
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="About_Us.html">About</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Venues.html">Venues</a></li>
+                        <li><a href="Booking.html">Gallery & Booking</a></li>
+                        <li><a href="Event_cancelletion.html">Event Cancellation</a></li>
+                        <li><a href="Feedback_Query.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact1">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 48, SKS Compound, Hosur Rd, Bengaluru, Karnataka, India</p>
+                    <p><i class="fas fa-phone"></i> +91-8310884090 </p>
+                    <p><i class="fas fa-envelope"></i> info@mpteventmanagement.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom1">
+                <span id="yr"></span> MPT Event Management. All rights reserved.</p>
+                <a class="a" href="#">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Terms of Service</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Legal</a>
+            </div>
+        </div>
+    </footer>
+
+
+  <!-- Toast -->
+  <div class="toast" id="toast">Request submitted ✔ PDF downloaded.</div>
+
+  <!-- Hidden canvas for barcode -->
+  <canvas id="barcodeCanvas" style="display:none"></canvas>
+   
+  <script src="../JavaScript_Code/Event_cancellation.js"></script>
+</body>
+</html>

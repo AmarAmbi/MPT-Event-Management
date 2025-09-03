@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="../CSS_Code/Payment.css">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+
+.section-title {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: rgb(2, 82, 109);
+  border-bottom: 2px solid #212121;
+  padding-bottom: 10px;
+}
+
+.summary-item {
+  margin-bottom: 15px;
+  font-size: 26px;
+  color: #333;
+}
+
+.summary-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.pay-btn {
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-btn {
+  background-color: #e74c3c;
+}
+
+.cancel-btn:hover {
+  background-color: #c0392b;
+}
+
+.proceed-btn {
+  background-color: #3498db;
+}
+
+.proceed-btn:hover {
+  background-color: #2980b9;
+}
+
+.radio-group {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.hidden {
+  display: none;
+}
+
+#makePaymentBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#makePaymentBtn {
+  background-color: #2ecc71;
+}
+
+#makePaymentBtn:hover:not(:disabled) {
+  background-color: #27ae60;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-contenpt {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.popup-contenpt h2 {
+  margin-bottom: 10px;
+  color: green;
+}
+
+.popup-contenpt button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #28a745;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-contenpt button:hover {
+  background: #218838;
+}
+.card-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.cann{
+    text-decoration: none;
+    color: rgb(227, 221, 221);
+    background-color: #e74c3c;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+  </style>
+</head>
+<body>
+  
+    <!-- Booking Summary Section -->
+    <div id="bookingSummarySection">
+      <h2 class="section-title">Booking Summary</h2>
+      <div class="summary-item"><strong>User ID:</strong> <span id="userId"></span></div>
+      <div class="summary-item"><strong>Event:</strong> <span id="eventName"></span></div>
+      <div class="summary-item"><strong>Members:</strong> <span id="members"></span></div>
+      <div class="summary-item"><strong>Amount:</strong> ₹<span id="amount"></span></div>
+
+      <div class="summary-actions">
+        <a href="Gallery.html"><button id="cancelBooking" class="pay-btn cancel-btn">Cancel</button></a>
+        <button id="payNowFromSummary" class="pay-btn proceed-btn">Pay Now</button>
+      </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div id="paymentSection" class="hidden">
+      <h2 class="section-title">Payment Method</h2>
+      <div class="radio-group">
+        <label><input type="radio" name="paymentMethod" id="card" checked> Card</label>
+        <label><input type="radio" name="paymentMethod" id="upi"> UPI</label>
+        <label><input type="radio" name="paymentMethod" id="netbanking"> NetBanking</label>
+        <label><input type="radio" name="paymentMethod" id="wallet"> Wallet</label>
+      </div>
+
+      <form id="paymentForm">
+        <div id="cardDetails">
+          <img src="../Images/Cards.png" alt="Atm Cards img" class="card-img" width="299px" height="138px">
+          <label>Card Number</label>
+          <input type="text" class="check-input" placeholder="card number"  pattern="\d{16}" maxlength="16" />
+          <label>Expiry</label>
+          <input type="text" class="check-input" placeholder="MM/YYYY"/ pattern="\d{2}/\d{4}" maxlength="7"/>
+          <label>CVV</label>
+          <input type="text" class="check-input" placeholder="_ _ _"/ pattern="\d{3}" maxlength="3" />
+        </div>
+
+        <div id="upiDetails" class="hidden">
+            <img src="../Images/UPI.png" alt="upi img" class="card-img">
+          <label>UPI ID</label>
+          <input type="text" class="check-input" placeholder="Eg: 1234567890@ybl" pattern="^([a-zA-Z0-9._-]{2,256}|[6-9]\d{9})@[a-zA-Z]{3,}$"/>
+        </div>
+
+        <div id="netbankingDetails" class="hidden">
+            <img src="../Images/Netbanking.png" alt="netbanking img" class="card-img" width="299px" height="168px">
+          <label>Select Bank</label>
+          <select id="bank" class="check-input">
+            <option value="">Select</option>
+            <option value="sbi">SBI</option>
+            <option value="hdfc">HDFC</option>
+            <option value="Axis">Axis</option>
+            <option value="Canara">Canara</option>
+            <option value="ICICI">ICICI</option>
+            <option value="PNB">PNB</option>
+            <option value="BOB">BOB</option>
+            <option value="Union">Union Bank</option>
+            <option value="Kotak">Kotak Mahindra</option>
+            <option value="other">Other</option>
+          </select>
+          <div id="netbankingAuth" class="hidden">
+            <label>User ID</label>
+            <input type="text" class="check-input" placeholder="user id" pattern="[a-zA-Z0-9._]{6,20}" /> <!-- "User ID should be 6-20 characters long and can include letters, numbers, . or _" -->
+            <label>Password</label>
+            <input type="password" class="check-input" placeholder="********" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,20}"/>
+          </div>
+        </div>
+
+        <div id="walletDetails" class="hidden">
+            <img src="../Images/Wallet.png" alt="wallet img" class="card-img" width="299px" height="168px">
+          <label>Choose Wallet</label>
+          <select id="walletSelect" class="check-input">
+            <option value="">Select</option>
+            <option value="googlepay">Google Pay</option>
+            <option value="phonepe">PhonePe</option>
+            <option value="paytm">Paytm</option>
+          </select>
+          <div id="walletAuth" class="hidden">
+            <label>Mobile Number</label>
+            <input type="tel" class="check-input" pattern="[6-9][0-9]{9}" maxlength="10"/>
+          </div>
+        </div>
+
+        <div class="summary-actions">
+            <a href="Gallery.html" class="cann">Cancel</a>
+            <button type="submit" class="pay-btn" id="makePaymentBtn" disabled>Make Payment</button>
+        </div>
+        
+      </form>
+    </div>
+
+    <!-- Thank You Popup -->
+    <div id="thankYouPeopup" class="popups hidden">
+      <div class="popup-contenpt">
+        <h2>🎉 Payment Successful!</h2>
+        <p>Thank you for booking with MPT Events.</p>
+        <button id="closePopup">Go to Gallery</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const details = JSON.parse(localStorage.getItem('bookingDetails'));
+  if (details) {
+    document.getElementById('userId').textContent = details.userId;
+    document.getElementById('eventName').textContent = details.eventName;
+    document.getElementById('members').textContent = details.members;
+    document.getElementById('amount').textContent = details.amount;
+  }
+
+  const sections = ['cardDetails', 'upiDetails', 'netbankingDetails', 'walletDetails'];
+  const submitButton = document.getElementById('makePaymentBtn');
+
+  function showSection(id) {
+    sections.forEach(sec => document.getElementById(sec).classList.add('hidden'));
+    if (id) document.getElementById(id).classList.remove('hidden');
+    checkInputs();
+  }
+
+  document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      localStorage.setItem('lastPaymentMethod', radio.id);
+      showSection(`${radio.id}Details`);
+    });
+  });
+
+  document.getElementById('walletSelect').addEventListener('change', () => {
+    document.getElementById('walletAuth').classList.toggle('hidden', document.getElementById('walletSelect').value === '');
+    checkInputs();
+  });
+
+  document.getElementById('bank').addEventListener('change', () => {
+    document.getElementById('netbankingAuth').classList.toggle('hidden', document.getElementById('bank').value === '');
+    checkInputs();
+  });
+
+  function checkInputs() {
+    const inputs = document.querySelectorAll('.check-input');
+    let valid = true;
+    inputs.forEach(el => {
+      if (el.offsetParent !== null && el.value.trim() === '') {
+        valid = false;
+      }
+    });
+    submitButton.disabled = !valid;
+  }
+
+  document.querySelectorAll('.check-input').forEach(el => {
+    el.addEventListener('input', checkInputs);
+    el.addEventListener('change', checkInputs);
+  });
+
+  document.getElementById('payNowFromSummary').addEventListener('click', () => {
+    document.getElementById('bookingSummarySection').classList.add('hidden');
+    document.getElementById('paymentSection').classList.remove('hidden');
+
+    const savedMethod = localStorage.getItem('lastPaymentMethod');
+    if (savedMethod) {
+      document.getElementById(savedMethod).checked = true;
+      showSection(`${savedMethod}Details`);
+    } else {
+      showSection('cardDetails');
+    }
+  });
+
+  document.getElementById('paymentForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const paymentId = "MPT" + Math.floor(100000 + Math.random() * 900000);
+    const now = new Date();
+    const formattedDateTime = now.toLocaleString('en-IN', {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+      hour12: true
+    });
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Header background
+    doc.setFillColor(0, 102, 204);
+    doc.rect(0, 0, 210, 20, 'F');
+
+    // Header text
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(16);
+    doc.text("MPT Events - Payment Receipt", 105, 13, null, null, 'center');
+
+    // Body text
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(12);
+    let y = 30;
+
+    doc.text("Receipt Details", 14, y);
+    doc.line(14, y + 2, 196, y + 2);
+    y += 10;
+
+    doc.text(`User ID:`, 20, y);       doc.text(details.userId, 60, y);        y += 8;
+    doc.text(`Event Name:`, 20, y);    doc.text(details.eventName, 60, y);     y += 8;
+    doc.text(`Members:`, 20, y);       doc.text(details.members, 60, y);       y += 8;
+    doc.text(`Amount Paid:`, 20, y);   doc.text(`${details.amount}`, 60, y);   y += 8;
+
+    // ❌ REMOVED payment method, wallet name, mobile number from PDF
+
+    doc.text(`Payment ID:`, 20, y);    doc.text(paymentId, 60, y);             y += 8;
+    doc.text(`Date & Time:`, 20, y);   doc.text(formattedDateTime, 60, y);     y += 10;
+
+    // ✅ Mixed color "Payment Status: Success"
+    doc.setTextColor(0, 0, 0);
+    doc.text("Payment Status:", 20, y);
+    doc.setTextColor(0, 128, 0);
+    doc.text("Success", 60, y); // green
+    y += 10;
+
+    doc.setDrawColor(200);
+    doc.line(14, y, 196, y);
+
+    y += 10;
+    doc.setFontSize(11);
+    doc.setTextColor(100);
+    doc.text("Thank you for booking with MPT Events!", 105, y, null, null, 'center');
+
+    doc.save("MPT_Booking_Receipt.pdf");
+
+    const messageBox = document.createElement('div');
+    messageBox.textContent = `✅ Payment Successful! Payment ID: ${paymentId}`;
+    messageBox.style.color = 'green';
+    messageBox.style.fontWeight = 'bold';
+    messageBox.style.fontSize = '18px';
+    messageBox.style.margin = '20px 0';
+    messageBox.style.textAlign = 'center';
+    document.getElementById('paymentSection').appendChild(messageBox);
+
+    setTimeout(() => {
+      document.getElementById('paymentSection').classList.add('hidden');
+      document.getElementById('thankYouPeopup').classList.remove('hidden');
+    }, 1500);
+  });
+
+  document.getElementById('closePopup').addEventListener('click', () => {
+    document.getElementById('thankYouPeopup').classList.add('hidden');
+    window.location.href = 'Gallery.html';
+  });
+});
+
+  </script>
+
+  <script src="../JavaScript_Code/Payment.js"></script>
+</body>
+</html>

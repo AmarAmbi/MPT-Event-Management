@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MPT Events — Gallery & Booking</title>
+  <link rel="icon" href="../Images/Logo.png">
+  <link rel="stylesheet" href="../CSS_Code/Booking.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- ==================== HEADER ==================== -->
+  <header class="main-header1">
+        <div class="container1">
+            <div class="logo">
+                    <img src="../Images/Logo.png" alt="MPT Events Logo">
+                    <h1>MPT Events</h1>
+            </div>
+            <nav class="main-nav1">
+                <ul>
+                   <li><a href="Home.html" class="active">Home</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="Services.html">Services <i class="fas fa-chevron-down1"></i></a>
+                        <div class="dropdown-content">
+                            <a href="Catering_Services.html">Catering_Services</a>
+                            <a href="Corporate_Events.html">Corporate Events</a>
+                            <a href="Destination_Events.html">Destination Events</a>
+                            <a href="Music_&_Entertainment.html">Music & Entertainment</a>
+                            <a href="Private_Parties.html">Private Parties</a>
+                            <a href="Weddings.html">Wedding Events</a>
+                        </div>
+                    </li>
+                    <li><a href="Venues.html">Venues</a></li>
+                    <li><a href="Booking.html">Gallery & Booking</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="Login.html" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="container hero">
+    <div>
+      <p class="pill">MPT Event Management</p>
+      <h1 class="title">Plan, Preview & <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Book</span> your event with motion.</h1>
+      <p class="subtitle">“An event is not just about dates and decorations, it’s about creating timeless moments. Book your special day with us, and let our team transform your dreams into unforgettable experiences filled with love, laughter, and memories that last forever.”</p>
+      <div style="display:flex; gap:10px; margin-top:12px">
+        <a href="Gallery.html"><button class="btn">View Gallery</button></a>
+        <button class="btn" style="background:linear-gradient(135deg, var(--accent), #ffb0c9)" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Start Booking</button>
+      </div>
+    </div>
+    <div class="heroCard" id="heroCard1">
+      <div class="card3d" id="tiltCard" aria-hidden="true">
+        <img src="../Images/BookingImg.png" alt="Booking img" style="height: 400px; border-radius: 10px;">
+        <div class="shine"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BOOKING ==================== -->
+  <section id="booking" class="container grid">
+    <form id="bookingForm" class="panel reveal" autocomplete="on">
+      <div class="sectionTitle"><h3>Booking Details</h3><span class="hint">All fields with * are required</span></div>
+
+      <div class="row">
+        <div>
+          <label>Event Type*</label>
+          <select id="eventType" required>
+            <option value="">Select…</option>
+            <option>Wedding</option>
+            <option>Corporate</option>
+            <option>Birthday</option>
+            <option>Concert</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label>Guests*</label>
+          <input type="number" id="guests" min="10" max="10000" placeholder="e.g., 150" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Date*</label>
+          <input type="date" id="date" required />
+        </div>
+        <div>
+          <label>Time*</label>
+          <input type="time" id="time" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>City*</label>
+          <input id="city" placeholder="Bengaluru" required />
+        </div>
+        <div>
+          <label>Venue (optional)</label>
+          <input id="venue" placeholder="Venue name" />
+        </div>
+      </div>
+
+      <div class="row-3 row">
+        <div>
+          <label>Decor</label>
+          <select id="decor">
+            <option value="0">Standard (₹0)</option>
+            <option value="20000">Premium (₹20,000)</option>
+            <option value="45000">Luxury (₹45,000)</option>
+          </select>
+        </div>
+        <div>
+          <label>Photography</label>
+          <select id="photo">
+            <option value="0">None (₹0)</option>
+            <option value="15000">Basic (₹15,000)</option>
+            <option value="35000">Cinematic (₹35,000)</option>
+          </select>
+        </div>
+        <div>
+          <label>Catering</label>
+          <select id="catering">
+            <option value="0">BYO (₹0)</option>
+            <option value="800">Veg (₹800 / guest)</option>
+            <option value="1200">Veg + Non‑Veg (1,200 / guest)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="sectionTitle" style="margin-top:18px"><h3>Contact</h3></div>
+      <div class="row">
+        <div>
+          <label>Your Name*</label>
+          <input id="name" placeholder="Full name" required />
+        </div>
+        <div>
+          <label>Phone*</label>
+          <input id="phone" type="tel" placeholder="10‑digit mobile" pattern="[0-9]{10}" required />
+        </div>
+      </div>
+      <div>
+        <label>Email*</label>
+        <input id="email" type="email" placeholder="you@example.com" required />
+      </div>
+      <div>
+        <label>Notes</label>
+        <textarea id="notes" rows="3" placeholder="Tell us more about your vision…"></textarea>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:12px; align-items:center">
+        <button type="submit" class="btn">Confirm Booking</button>
+        <span class="hint" id="formHint">We’ll send a confirmation Message to your mail.</span>
+      </div>
+    </form>
+
+    <aside class="panel priceCard reveal">
+      <div class="sectionTitle"><h3>Live Price Estimator</h3><span class="badge" id="statusBadge">Ready</span></div>
+      <div class="ring" id="ring">
+          <img src="../Images/Price.png" alt="price img" width="400px" height="250px" style="padding-left: 50px; padding-top: 10px;">
+        </div>
+      <div class="priceBox">
+        <div class="price"><span id="total">0</span></div>
+        <div class="hint">Estimated subtotal (incl. GST). Actual quote may vary.</div>
+        <div class="kpis">
+          <div><div class="hint">Base</div><div id="base">₹0</div></div>
+          <div><div class="hint">Per‑guest</div><div id="perGuest">₹0</div></div>
+          <div><div class="hint">Add‑ons</div><div id="addons">₹0</div></div>
+          <div><div class="hint">Guests</div><div id="guestCount">0</div></div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ==================== GALLERY ==================== -->
+<section id="gallery" class="container panel reveal" style="margin-top:20px">
+<div class="sectionTitle"><h3>Photo Grid</h3><span class="hint">Move your cursor to tilt & glow</span></div>
+<div class="strip" id="galleryStrip">
+<div class="tile"><img src="../Images/Wedding12.png" alt=""/></div>
+<div class="tile"><img src="../Images/Music&Entertainment14.jpg" alt=""/></div>
+<div class="tile"><img src="../Images/Others15.png" alt=""/></div>
+<div class="tile"><img src="../Images/Corp16.png" alt=""/></div>
+<div class="tile"><img src="../Images/Tech_Talk.png" alt=""/></div>
+<div class="tile"><img src="../Images/Music&Entertainment15.jpg" alt=""/></div>
+</div>
+</section>
+
+  
+
+  <!-- ==================== MODAL (CONFIRMATION) ==================== -->
+  <div class="modal" id="modal">
+    <div class="box">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+        <h3>Booking Confirmed</h3>
+        <button class="btn" onclick="closeModal()">Close</button>
+      </div>
+      <p class="hint">Thank you for choosing MPT Events. Your request has been logged.</p>
+      <div id="summary" class="panel" style="margin-top:8px"></div>
+      <div style="display:flex; gap:8px; margin:12px 0 6px">
+        <span class="badge">Ref: <span id="ref"></span></span>
+        <span class="badge" style="background:rgba(124,92,255,.12); border-color:rgba(124,92,255,.35)">Est. Total: ₹<span id="sumTotal"></span></span>
+      </div>
+    </div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+  </div>
+
+  <!-- Scroll-to-top button -->
+  <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">↑</button>
+
+  <!-- FOOTER -->
+  <footer class="main-footer1">
+        <div class="container1">
+            <div class="footer-grid1">
+                <div class="footer-about1">
+                    <h3>MPT Events</h3>
+                    <p>Your trusted partner for creating memorable events across Bengaluru and beyond.</p>
+                    <div class="social-links1">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links1">
+                    <h3>Quick Links</h3>
+                     <ul>
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="About_Us.html">About</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Venues.html">Venues</a></li>
+                        <li><a href="Booking.html">Gallery & Booking</a></li>
+                        <li><a href="Event_cancelletion.html">Event Cancellation</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact1">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 48, SKS Compound, Hosur Rd, Bengaluru, Karnataka, India</p>
+                    <p><i class="fas fa-phone"></i> +91-8310884090 </p>
+                    <p><i class="fas fa-envelope"></i> info@mpteventmanagement.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom1">
+                <span id="year"></span> MPT Event Management. All rights reserved.</p>
+                <a class="a" href="#">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Terms of Service</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Legal</a>
+            </div>
+        </div>
+    </footer>
+
+<script src="../JavaScript_Code/Booking.js"></script>
+</body>
+</html>

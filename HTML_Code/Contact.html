@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPT Events — Contact Us</title>
+  <link rel="icon" href="../Images/Logo.png"/>
+  <link rel="stylesheet" href="../CSS_Code/Contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-anim">
+
+  <!-- Header -->
+  <header class="main-header1">
+        <div class="container1">
+            <div class="logo">
+                    <img src="../Images/Logo.png" alt="MPT Events Logo">
+                    <h1>MPT Events</h1>
+            </div>
+            <nav class="main-nav1">
+                <ul>
+                   <li><a href="Home.html" class="active">Home</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="Services.html">Services <i class="fas fa-chevron-down1"></i></a>
+                        <div class="dropdown-content">
+                            <a href="Catering_Services.html">Catering_Services</a>
+                            <a href="Corporate_Events.html">Corporate Events</a>
+                            <a href="Destination_Events.html">Destination Events</a>
+                            <a href="Music_&_Entertainment.html">Music & Entertainment</a>
+                            <a href="Private_Parties.html">Private Parties</a>
+                            <a href="Weddings.html">Wedding Events</a>
+                        </div>
+                    </li>
+                    <li><a href="Venues.html">Venues</a></li>
+                    <li><a href="Booking.html">Gallery & Booking</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="Login.html" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <!-- HERO with parallax + 3D mock -->
+  <section class="hero">
+    <div class="hero-wrap">
+      <div>
+        <h1 class="reveal">Plan unforgettable events with a team that replies fast.</h1>
+        <p class="reveal" style="transition-delay:.05s">Reach our coordinators for weddings, corporate summits, launches and festivals—24/7. We reply within minutes on working days.</p>
+        <div class="badges reveal" style="transition-delay:.1s">
+          <span class="badge">ISO-certified logistics</span>
+          <span class="badge">Pan‑Karnataka venues</span>
+          <span class="badge">In‑house decor & AV</span>
+        </div>
+      </div>
+      <div class="scene" id="scene">
+        <div class="layer">
+          <div class="orb o1"></div>
+          <div class="orb o2"></div>
+          <div class="orb o3"></div>
+        </div>
+        <div class="mock-card tilt" id="heroCard">
+          <img alt="Event ambience" src="../Images/IntroHero.png"/>
+          <div class="shine"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick contact cards -->
+  <section class="contact-grid">
+    <div class="card tilt reveal">
+      <div class="title">Phone</div>
+      <p class="small">Sales & Bookings</p>
+      <h3 style="margin:8px 0 0">+91 8310884090</h3>
+      <p class="small">Mon–Sat • 9:30 AM – 7:30 PM</p>
+    </div>
+    <div class="card tilt reveal" style="transition-delay:.06s">
+      <div class="title">Email</div>
+      <p class="small">We respond within 12 hours</p>
+      <h3 style="margin:8px 0 0">info@mpteventmanagement.com</h3>
+      <p class="small">Vendor Partnerships • Media</p>
+    </div>
+    <div class="card tilt reveal" style="transition-delay:.12s">
+      <div class="title">WhatsApp</div>
+      <p class="small">Quick chat for updates</p>
+      <h3 style="margin:8px 0 0">+91 8310884090</h3>
+      <p class="small">Instant confirmations • Live support</p>
+    </div>
+  </section>
+
+  <!-- Form + Info/Map -->
+  <section id="form" class="wrap">
+    <form id="contactForm" class="reveal">
+      <div class="heading">Tell us about your event</div>
+      <div class="row">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" name="name" placeholder="e.g. Priya Sharma" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" placeholder="e.g. +91 98xxxxxxx" required>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div>
+          <label for="type">Event Type</label>
+          <select id="type" name="type" required>
+            <option value="">Select…</option>
+            <option>Wedding</option>
+            <option>Corporate</option>
+            <option>Concert</option>
+            <option>Birthday</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="date"> Date</label>
+          <input id="date" name="date" type="date">
+        </div>
+        <div>
+          <label for="guests">Guests</label>
+          <input id="guests" name="guests" type="number" min="10" max="100000" placeholder="e.g. 250">
+        </div>
+      </div>
+      <label for="msg">Message</label>
+      <textarea id="msg" name="msg" placeholder="Share your vision, venue, budget band, special requests…" required></textarea>
+      <div class="actions">
+        <button type="reset" class="btn" style="background:rgba(255,255,255,.06); color:var(--text)">Reset</button>
+        <button class="btn" id="sendBtn" type="submit">Send Enquiry</button>
+      </div>
+    </form>
+
+    <aside class="info reveal" id="map">
+      <div class="line">
+        <div class="icon">📍</div>
+        <div>
+          <div class="title">MPT Events HQ</div>
+          <div class="small">48, SKS Compound, Hosur Rd, Bengaluru, Karnataka, India</div>
+        </div>
+      </div>
+      <div class="line">
+        <div class="icon">🕒</div>
+        <div>
+          <div class="title">Working Hours</div>
+          <div class="small">Mon–Sat • 9:30 AM – 7:30 PM | Sun by Appointment</div>
+        </div>
+      </div>
+      <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.752328114663!2d77.60742127494498!3d12.921319287396781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14c2b9a101f3%3A0xc3c9d7a2d80d2c0b!2s48%2C%20SKS%20Compound%2C%20Hosur%20Rd%2C%20Bengaluru%2C%20Karnataka%20560029%2C%20India!5e0!3m2!1sen!2sus!4v1718972449089!5m2!1sen!2sus"></iframe>
+      <div class="small">*Map shows our central client lounge. Studio & warehouses across Karnataka.</div>
+    </aside>
+  </section>
+
+  
+
+  <!-- Gallery with 3D tilt + slideshow -->
+  <section id="gallery" class="gallery">
+    <h2 class="reveal">Recent Productions</h2>
+    <div class="grid">
+      <figure class="g-item tilt reveal">
+        <img src="../Images/VenueWeddings.png" alt="Wedding stage"/>
+        <div class="gloss"></div>
+        <figcaption class="cap">Royal Wedding • Bengaluru</figcaption>
+      </figure>
+      <figure class="g-item tilt reveal" style="transition-delay:.05s">
+        <img src="../Images/Corp9.png" alt="Corporate summit"/>
+        <div class="gloss"></div>
+        <figcaption class="cap">Leadership Summit • Mysuru</figcaption>
+      </figure>
+      <figure class="g-item tilt reveal" style="transition-delay:.1s">
+        <img src="../Images/Music&Entertainment4.png" alt="Concert stage"/>
+        <div class="gloss"></div>
+        <figcaption class="cap">Indie Concert • Coorg</figcaption>
+      </figure>
+    </div>
+
+    <div class="strip reveal" style="transition-delay:.12s">
+      <div class="slides">
+        <img src="../Images/decor.jpg" alt="Decor 1"/>
+        <img src="../Images/dance.jpg" alt="Decor 2"/>
+        <img src="../Images/anchor.jpg" alt="AV 1"/>
+        <img src="../Images/dance-performance.jpg" alt="Dance"/>
+        <img src="../Images/live-music.jpg" alt="Lights"/>
+        <img src="../Images/Others4.png" alt="Crowd"/>
+        <!-- duplicate for infinite scroll illusion -->
+        <img src="../Images/decor.jpg" alt="Decor 1"/>
+        <img src="../Images/dance.jpg" alt="Decor 2"/>
+        <img src="../Images/anchor.jpg" alt="AV 1"/>
+        <img src="../Images/dance-performance.jpg" alt="Dance"/>
+        <img src="../Images/live-music.jpg" alt="Lights"/>
+        <img src="../Images/Others4.png" alt="Crowd"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="dialog">
+      <h3 style="margin:0 0 6px">Enquiry sent ✅</h3>
+      <p class="small">Thanks! Our coordinators will reach you shortly. A copy has been saved in your browser for reference.</p>
+      <div class="actions" style="justify-content:flex-end; margin-top:12px">
+        <button class="btn" id="okBtn">OK</button>
+      </div>
+    </div>
+  </div>
+
+   <!-- Scroll-to-top button -->
+  <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">↑</button>
+
+  <!-- Footer -->
+   <footer class="main-footer1">
+        <div class="container1">
+            <div class="footer-grid1">
+                <div class="footer-about1">
+                    <h3>MPT Events</h3>
+                    <p>Your trusted partner for creating memorable events across Bengaluru and beyond.</p>
+                    <div class="social-links1">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links1">
+                    <h3>Quick Links</h3>
+                     <ul>
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="About_Us.html">About</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Venues.html">Venues</a></li>
+                        <li><a href="Booking.html">Gallery & Booking</a></li>
+                        <li><a href="Event_cancelletion.html">Event Cancellation</a></li>
+                        <li><a href="Feedback_Query.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact1">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 48, SKS Compound, Hosur Rd, Bengaluru, Karnataka, India</p>
+                    <p><i class="fas fa-phone"></i> +91-8310884090 </p>
+                    <p><i class="fas fa-envelope"></i> info@mpteventmanagement.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom1">
+                <span id="yr"></span> MPT Event Management. All rights reserved.</p>
+                <a class="a" href="#">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Terms of Service</a>
+                <span class="separator">|</span>
+                <a class="a" href="#">Legal</a>
+            </div>
+        </div>
+    </footer>
+
+  <script src="../JavaScript_Code/Contact.js"></script>
+</body>
+</html>
