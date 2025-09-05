@@ -39,11 +39,7 @@ try {
         el.style.transform = 'perspective(900px) rotateX(0) rotateY(0)';
       });
     });
-} catch (error) {
-  console.error('An error occurred:', error);
-}
-
-// --------------scroll----------------
+  // --------------scroll----------------
     let mybutton = document.getElementById("scrollTopBtn");
 
     window.onscroll = function() {scrollFunction()};
@@ -59,3 +55,7 @@ try {
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+} catch (error) {
+  console.error('An error occurred:', error);
+}
+
