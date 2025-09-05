@@ -1,3 +1,4 @@
+try{
     // Year
     document.getElementById('y').textContent = new Date().getFullYear();
 
@@ -77,3 +78,6 @@
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    } catch (error) {
+  console.error('An error occurred:', error);
+}
