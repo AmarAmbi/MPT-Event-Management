@@ -1,7 +1,6 @@
-const formatINR = (n) =>  new Intl.NumberFormat('en-IN').format(n|0);
-
+try{
+    const formatINR = (n) =>  new Intl.NumberFormat('en-IN').format(n|0);
     
-
     // ============== IMAGE TILES TILT & GLOW ==============
     const allTiles = document.querySelectorAll('.tile');
     for(const t of allTiles){
@@ -166,3 +165,6 @@ heroCard1
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+} catch (error) {
+  console.error('An error occurred:', error);
+}
