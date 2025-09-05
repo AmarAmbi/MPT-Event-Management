@@ -1,4 +1,4 @@
-
+Try{
 const $ = id=>document.getElementById(id);
 const { jsPDF } = window.jspdf;
 
@@ -122,4 +122,6 @@ const slides = document.querySelector('.slides');
   el.addEventListener('pointerenter', ()=> el.style.animationPlayState='paused');
   el.addEventListener('pointerleave', ()=> el.style.animationPlayState='running');
 });
-
+} catch (error) {
+  console.error('An error occurred:', error);
+}
