@@ -1,3 +1,4 @@
+try{
 // Existing filter logic for gallery images
 const buttons = document.querySelectorAll('.filters button');
 const galleryImages = document.querySelectorAll('.gallery img');
@@ -151,3 +152,6 @@ heroCard1
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  } catch (error) {
+  console.error('An error occurred:', error);
+}
