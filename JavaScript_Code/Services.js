@@ -1,4 +1,5 @@
-// Helper
+try{
+    // Helper
     const el = (id) => document.getElementById(id);
 
     // Year in footer
@@ -61,3 +62,6 @@
     document.addEventListener('keydown', (e)=>{
       if(e.key === 'Escape' && modal.classList.contains('show')) modal.classList.remove('show');
     });
+    } catch (error) {
+  console.error('An error occurred:', error);
+}
