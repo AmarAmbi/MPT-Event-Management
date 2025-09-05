@@ -1,4 +1,5 @@
-/* -------------------------
+try{
+   /* -------------------------
    Utility: LocalStorage DB
 --------------------------*/
 const DB_KEYS = {
@@ -288,4 +289,6 @@ function cryptoRandomId(len=16){
   }
 })();
 
-
+} catch (error) {
+  console.error('An error occurred:', error);
+}
