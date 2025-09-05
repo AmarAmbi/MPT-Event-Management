@@ -1,4 +1,4 @@
- // Footer year
+try{ // Footer year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
     // Intersection Observer for reveal animations
@@ -80,3 +80,6 @@ heroCard1
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+ } catch (error) {
+  console.error('An error occurred:', error);
+}
