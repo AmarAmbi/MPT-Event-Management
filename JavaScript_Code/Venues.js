@@ -1,4 +1,5 @@
-function openModal() {
+try{
+  function openModal() {
   document.getElementById("pricingModal").style.display = "flex";
 }
 
@@ -85,3 +86,6 @@ heroCard1
     function topFunction() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  } catch (error) {
+  console.error('An error occurred:', error);
+}
