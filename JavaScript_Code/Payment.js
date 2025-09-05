@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+try{
+  document.addEventListener("DOMContentLoaded", () => {
   const details = JSON.parse(localStorage.getItem('bookingDetails'));
   if (details) {
     document.getElementById('userId').textContent = details.userId;
@@ -141,3 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = 'Gallery.html';
   });
 });
+
+  } catch (error) {
+  console.error('An error occurred:', error);
+}
