@@ -1,4 +1,4 @@
-  document.addEventListener("DOMContentLoaded", function () {
+try{  document.addEventListener("DOMContentLoaded", function () {
       const logoutBtn = document.getElementById("logoutBtn");
       const popup = document.getElementById("popup");
 
@@ -19,4 +19,6 @@
           }, 1000);
       });
   });
-
+} catch (error) {
+  console.error('An error occurred:', error);
+}
